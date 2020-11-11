@@ -13,11 +13,11 @@ public class Board {
 	private int boardSize;
 	private boolean[][] board;
 
-	public Board(int[] horizontalPositions) {
-		this.boardSize = horizontalPositions.length;
+	public Board(int[] columnPosition) {
+		this.boardSize = columnPosition.length;
 		this.board = new boolean[boardSize][boardSize];
 		for (int i = 0; i < boardSize; i++) {
-			board[horizontalPositions[i]][i] = true;
+			board[i][columnPosition[i]] = true;
 		}
 	}
 
