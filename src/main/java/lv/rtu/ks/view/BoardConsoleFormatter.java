@@ -1,15 +1,13 @@
 package lv.rtu.ks.view;
 
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.stereotype.Service;
 
-@Service
 public class BoardConsoleFormatter {
 
 	protected static final char SYMBOL_QUEEN = '#';
 	protected static final char SYMBOL_EMPTY = '-';
 
-	public String format(Board board) {
+	public static String format(Board board) {
 		StringBuilder formattedBoard = new StringBuilder();
 		final int boardSize = board.getBoardSize();
 
@@ -26,11 +24,11 @@ public class BoardConsoleFormatter {
 		return formattedBoard.toString();
 	}
 
-	protected String calculateHorizontalLineSeparator(int boardSize) {
+	protected static String calculateHorizontalLineSeparator(int boardSize) {
 		return boardSize == 0 ? "" : StringUtils.repeat("-", boardSize * 3 + boardSize + 1);
 	}
 
-	protected char queenOrEmpty(boolean isQueen) {
+	protected static char queenOrEmpty(boolean isQueen) {
 		return isQueen ? SYMBOL_QUEEN : SYMBOL_EMPTY;
 	}
 

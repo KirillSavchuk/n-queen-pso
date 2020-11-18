@@ -1,23 +1,20 @@
 package lv.rtu.ks.view;
 
-import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.ToString;
 
-@Getter
-@Setter
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@ToString
 public class Board {
 
-	private int boardSize;
-	private boolean[][] board;
+	@Getter
+	private final int boardSize;
+	private final boolean[][] board;
 
-	public Board(int[] columnPosition) {
-		this.boardSize = columnPosition.length;
+	public Board(QueenPositions queenPositions) {
+		this.boardSize = queenPositions.size();
 		this.board = new boolean[boardSize][boardSize];
-		for (int i = 0; i < boardSize; i++) {
-			board[i][columnPosition[i]] = true;
+		for (Queen queen : queenPositions) {
+			board[queen.getRow()][queen.getColumn()] = true;
 		}
 	}
 
