@@ -1,12 +1,15 @@
 package lv.rtu.ks.view;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
+import static lv.rtu.ks.utils.ArrayUtil.toArray;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -16,7 +19,12 @@ class BoardTest {
 
 	@BeforeEach
 	public void setUp() {
-		board = new Board(new int[]{1, 2, 0, 0, 4});
+		board = new Board(new QueenPositions(toArray(1, 2, 0, 0, 4)));
+	}
+
+	@Test
+	void constructor_shouldInitializeBoardWithCorrectSize() {
+		assertThat(board.getBoardSize()).isEqualTo(5);
 	}
 
 	@ParameterizedTest
