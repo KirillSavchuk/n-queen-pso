@@ -3,7 +3,7 @@ package lv.rtu.ks;
 import lv.rtu.ks.view.Board;
 import lv.rtu.ks.view.BoardConsoleFormatter;
 import lv.rtu.ks.view.QueenPositions;
-import lv.rtu.ks.view.QueenPositionsRandomGenerator;
+import lv.rtu.ks.view.QueenPositionsGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,7 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class NQueenProblemPsoApplication implements CommandLineRunner {
 
 	@Autowired
-	private QueenPositionsRandomGenerator queenPositionsRandomGenerator;
+	private QueenPositionsGenerator queenPositionsGenerator;
 
 	public static void main(String[] args) {
 		SpringApplication.run(NQueenProblemPsoApplication.class, args);

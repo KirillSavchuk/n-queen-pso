@@ -8,9 +8,9 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 @Service
-public class QueenPositionsRandomGenerator {
+public class QueenPositionsGenerator {
 
-	public QueenPositions random(int queenCount) {
+	public QueenPositions generateRandom(int queenCount) {
 		return new QueenPositions(this.randomIntArray(queenCount));
 	}
 

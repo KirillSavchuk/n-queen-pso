@@ -4,13 +4,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class QueenPositionsRandomGeneratorTest {
+class QueenPositionsGeneratorTest {
 
-	private final QueenPositionsRandomGenerator generator = new QueenPositionsRandomGenerator();
+	private final QueenPositionsGenerator generator = new QueenPositionsGenerator();
 
 	@Test
-	void random_shouldGenerateRandomQueenPositions() {
-		QueenPositions randomQueenPositions = generator.random(5);
+	void generateRandom_shouldGenerateRandomQueenPositions() {
+		QueenPositions randomQueenPositions = generator.generateRandom(5);
 
 		int rowPositionSum = randomQueenPositions.stream().mapToInt(Queen::getRow).sum();
 		int columnPositionSum = randomQueenPositions.stream().mapToInt(Queen::getColumn).sum();
